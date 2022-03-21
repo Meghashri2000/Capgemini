@@ -1,0 +1,40 @@
+#page {
+    background-color: gray;
+    
+}
+
+#title {
+    text-align: center;
+    
+    color: white;
+}
+
+#img {
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    
+
+}
+
+#title2 {
+    color: rgb(238, 229, 229);
+    text-align: center;
+}
+
+#points {
+    color: rgb(238, 232, 232);
+}
+
+#quote {
+    color: rgb(238, 232, 232);
+    text-align: center;
+    font-style: italic;
+}
+
+#wiki {
+    color: rgb(238, 232, 232);
+    text-align: center;
+}

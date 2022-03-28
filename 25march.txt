@@ -1,0 +1,115 @@
+Create a query to display the employee number, first name, last name, phone number and department number (Employees table).
+=>	select employee_id,first_name,last_name,phone_number,department_id from employees;
+
+Create a query to display the unique combination of values in department_id and job_id columns (Employees table).
+=>	select distinct job_id, department_id from employees;
+
+
+Create a query to display the last name concatenated with the first name, separated by space, and the telephone number 
+concatenated with the email address, separated by hyphen. Name the column headings “FULL_NAME” and “CONTACT_DETAILS” 
+respectively (Employees tables).
+=>	SELECT first_name ||' '||last_name AS Full_Name, phone_number ||' - '|| email AS Contact_Details from employees;
+
+
+Create a query to display the first name, last name, hire date, salary, and salary after a raise of 20%. Name the last column (salary after a raise) 
+heading as “ANNUAL_SAL” (Employees table).
+=>	SELECT first_name , last_name , hire_date , salary , salary * 20 AS ANNUAL_SAL FROM employees;
+
+
+Create a query to display the department number, department name, and manager number. Name the last column (manager number) heading 
+as “MNG” (Employees table).
+=>	SELECT department_name , department_id , manager_id AS MNG FROM  emp_details_view;
+
+Display job Title, the difference between minimum and maximum salaries for jobs with max salary in the range 10000
+      to 20000.
+=>	select job_title,(max_salary-min_salary) from jobs 
+	where max_salary between 10000 and 20000.;
+ 
+Display first name and join date of the employees who is either IT Programmer or Sales Man.
+=>	SELECT first_name, last_name, hire_date FROM employees 
+	WHERE job_id in ('IT_PROG','ST_MAN');
+
+Display details of the employees where commission percentage is null and salary in the range 5000 to 10000 and
+      department is 30.
+=>	SELECT * FROM employees where commission_pct is NULL 
+	and salary between 5000 and 10000 and department_id=30;
+
+Display manager ID and number of employees managed by the manager. 
+=>	select manager_id,COUNT(*) from employees GROUP BY manager_id;
+
+Display job ID for jobs with average salary more than 10000. 
+=>	SELECT job_id, AVG(salary) FROM employees GROUP BY job_id HAVING AVG(salary)>10000;
+
+Create a program to find if the number is odd even.
+=>	SET SERVEROUTPUT ON
+	DECLARE
+	a number:=5;
+	BEGIN
+	if (a=1) then
+	dbms_output.put_line('1 is neither odd nor even!!');
+	else
+	if mod(a,2)=0 then
+	dbms_output.put_line('Number '||a||' is even');
+	else
+	dbms_output.put_line('Number '||a||' is odd');
+	end if;
+	end if;
+	end;
+
+Create a program to find out the employee who earns the maximum salary
+=>	SET SERVEROUTPUT ON
+	DECLARE
+	emp_name VARCHAR2(25);
+	BEGIN
+	SELECT first_name into emp_name from employees where salary=(select max(salary) from employees);
+	dbms_output.put_line(emp_name ||' has the maximum salary');
+	END;
+
+Create a function that takes employee ID and return the number of jobs done by the employee in the past. 
+=>	CREATE or replace FUNCTION search_history (emp_id in NUMBER)  
+	RETURN NUMBER is 
+	v_count NUMBER;
+	BEGIN 
+	   SELECT count(*) into v_count FROM job_history where employee_id=emp_id; 
+	   RETURN v_count; 
+	END;
+
+	SET SERVEROUTPUT ON
+	DECLARE
+	BEGIN 
+   	dbms_output.put_line(search_history(101)); 
+	END; 
+
+Create a program that takes in the input string that changes the string to all upper case
+=>	SET SERVEROUTPUT ON
+	DECLARE
+	str VARCHAR2(255):='meghashri';
+	BEGIN
+	DBMS_OUTPUT.PUT_LINE(UPPER(str));
+	END;
+
+Sum of number between 1 to 100
+=>	SET SERVEROUTPUT ON
+	DECLARE 
+   	a number(30) := 1;
+   	s number(30) := 0;
+	BEGIN 
+	   WHILE a <= 100 LOOP 
+	      s := s + a;
+	      a := a + 1; 
+	   END LOOP; 
+	         dbms_output.put_line('The sum of numbers from 1 to 100 is '||s); 
+	END; 
+
+Sum of odd number between 1 to 100
+=>	SET SERVEROUTPUT ON
+	DECLARE 
+	   a number(30) := 1;
+	   s number(30) := 0;
+	BEGIN 
+	   WHILE a <= 100 LOOP 
+	   s := s + a;
+	      a := a + 2; 
+	   END LOOP; 
+	         dbms_output.put_line('The sum of odd numbers from 1 to 100 is '||s); 
+	END; 

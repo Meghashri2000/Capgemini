@@ -1,0 +1,202 @@
+******OPERATORS******
+
+        int a = 2;
+        int b = 5;
+        int c;
+        System.out.println("Arithmetic operators");
+       
+        // addition operator
+        System.out.println("a + b = " + (a + b));
+
+        // subtraction operator
+        System.out.println("a - b = " + (a - b));
+
+        // multiplication operator
+        System.out.println("a * b = " + (a * b));
+
+        // division operator
+        System.out.println("a / b = " + (a / b));
+
+        // modulo operator
+        System.out.println("a % b = " + (a % b));
+        
+        System.out.println("Relational operator");
+        
+        // == operator
+        System.out.println(a == b); 
+
+        // != operator
+        System.out.println(a != b);  
+
+        // > operator
+        System.out.println(a > b);  
+
+        // < operator
+        System.out.println(a < b);  
+
+        // >= operator
+        System.out.println(a >= b);  
+
+        // <= operator
+        System.out.println(a <= b);  
+        
+        System.out.println("Logical operators");
+          // && operator
+        System.out.println((15 > 5) && (13 > 15));  //false
+        System.out.println((15 > 5) && (13 < 15));  //true
+
+        // || operator
+        System.out.println((15 < 5) || (13 > 15));  //false
+        System.out.println((15 > 5) || (13 < 15));  //
+        System.out.println((15 < 5) || (13 < 15));  //true
+
+        // ! operator
+        System.out.println(!(15 == 5));  //true
+        System.out.println(!(15 > 5));  //false
+        
+        System.out.println("Assignment operator");
+        // assign value using =
+        c = 15;
+        System.out.println("c = 15  :" + c);
+
+        // assign value using =+
+        c += a;
+        System.out.println("c += a : " + c);
+
+        // assign value using =*
+        c *= a;
+        System.out.println("c *= a :" + c);
+    }
+
+
+
+******FLOW CONTROL******
+1. Find the given number is even or odd.
+=>
+	int a=5;
+	        if (a%2==0) {
+	            System.out.println(a+" is even number");
+	        }
+	        else if (a==1){
+	            System.out.println("1 is neither even nor odd number");
+	        }
+	        else {
+	            System.out.println(a+" is odd number");
+	        }
+
+2. Convert the following if-else-if construct into switch case:
+if(var == 1)
+
+System.out.println("good");
+
+else if(var == 2)
+
+System.out.println("better");
+
+else if(var == 3)
+
+System.out.println("best");
+
+else
+
+System.out.println("invalid");
+
+=>
+	       int var=2;
+	       switch (var){
+	           case 1: 
+	               System.out.println("good");
+	               break;
+	           case 2:
+	               System.out.println("better");
+	               break;
+	           case 3:
+	               System.out.println("best");
+	               break;
+	           default :
+	               System.out.println("invalid");
+	      }
+
+3. Check for a given year as a Leap Year
+=>
+       int year=2017;
+       if (((year % 4 == 0) && (year % 100!= 0)) || (year%400 == 0))
+         System.out.println(year+" is a leap year");
+      else
+         System.out.println(year+" is not a leap year");
+    }
+
+
+4. Create a grading system with Switch Case statement
+=>
+         int marks=80;
+      
+      switch(marks/10) {
+        case 10:
+        case 9:
+            System.out.println("A");
+           break;
+        case 8:
+            System.out.println("B");
+           break;
+        case 7:
+            System.out.println("C");
+           break;
+        case 6:
+            System.out.println("D");
+           break;
+        case 5:
+            System.out.println("E");
+           break;
+        default:
+            System.out.println("F");
+           break;
+      }
+    
+
+5. Write a for loop that will print out all the multiples of 3 from 3 to 36, that is: 3 6 9 12 15 18 21 24 27 30 33 36.
+=>
+ 	int n;
+	         for(int i=1;i<=12;i++){
+	             n = i*3;
+	             System.out.println(n);
+	         }
+
+6. Print even numbers between 40-60
+=>
+	for(int i=40;i<=60;i++){
+	             if (i%2==0){
+	             System.out.println(i);
+	             }
+	         }
+
+7. Write a program to print first 10 natural numbers in reverse order
+=>
+	for(int i=10;i>=1;i--){
+	         
+	             System.out.println(i);
+	             
+	         }
+
+8. Display Fibonacci Series Using for Loop
+=>
+	int a = 0;
+	         int b=1;
+	         int c;
+	         int count = 7;
+	         System.out.println(a+" "+b);
+	         for(int i=2;i<=count;i++){
+	             c = a+b;
+	             System.out.println(" "+c);
+	             a=b;
+	             b=c;
+	         }
+
+
+9. Find Factorial of a number using for loop
+=>
+	 int num=3, fact=1;
+	         for (int i=1;i<=num;i++){
+	             fact=fact*i;
+	         }
+	         System.out.println("The factorial of "+num +" is :"+fact);	

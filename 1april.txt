@@ -1,0 +1,58 @@
+1. Create a class named 'Student' with String variable 'name' and integer variable 'roll_no'. Assign the value of roll_no as '2' 
+    and that of name as "John" by creating an object of the class Student.
+=>
+	class Student{
+ 	 String name;
+	  int roll_no;
+	}
+
+	class info{
+	  public static void main(String[] args){
+	    Student s = new Student();
+	    s.name = "John";
+	    s.roll_no = 2;
+	    System.out.println("Name : "+s.name+" and roll number :  "+s.roll_no);
+	  }
+	}	
+
+2. Write a program to print the area of two rectangles having sides (4,5) and (5,8) respectively by creating a class named 
+    'Rectangle' with a method named 'Area' which returns the area and length and breadth passed as parameters to its constructor.
+=>
+	public class Rectangle {
+	   int length,breath;
+	  
+	   Rectangle(int l, int b) { // Parameterized constructor
+	      length=l;
+	      breath=b;
+	   }
+	   public int area() {
+	      return length * breath;
+	   }
+	   public static void main(String args[]) {
+	      Rectangle obj = new Rectangle(4,5);
+	        Rectangle obj1 = new Rectangle(5,8);
+	
+	        System.out.println(obj.area());
+	        System.out.println(obj1.area());
+	   }	
+	}
+
+3. Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5 units by creating a class named 'Triangle' 
+     without any parameter in its constructor.
+=>
+	class Triangle
+	{
+	    int a=3,b=4,c=5;
+	    public static void main(String[] args)
+	      {
+	             Triangle obj=new Triangle();
+	             int peri=(obj.a+obj.b+obj.c);	
+	             System.out.println("perimeter is:"+peri);
+	             int sp=(peri/2); //semi-perimeter
+	             
+	             int ar=((((sp*(sp-obj.a))*(sp-obj.b))*(sp-obj.c)));      
+	             
+	             double area=Math.sqrt(ar);   
+	             System.out.println("Area is:"+area);
+	      }
+	}
